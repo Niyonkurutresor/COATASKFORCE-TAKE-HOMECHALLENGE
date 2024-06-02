@@ -1,0 +1,146 @@
+* {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  box-sizing: border-box;
+  text-decoration: none;
+  line-height: normal;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --fontFamily: Arial, Helvetica, sans-serif;
+  --largeSize: xx-large;
+  --white: #fff;
+  --Link_color: #579bc8;
+
+  --textSize: large;
+  --upperCase: uppercase;
+  --lowerCase: lowercase;
+  --padding: 2rem;
+}
+
+body {
+  font-family: var(--fontFamily);
+  font-size: 16px;
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #000;
+}
+.cards_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+img {
+  display: block;
+  height: 595px;
+  max-width: none;
+  position: relative;
+  left: -50%;
+}
+
+.ui-card {
+  overflow: hidden;
+  width: 293px;
+  height: 588px;
+  overflow: hidden;
+  position: relative;
+}
+
+.ui-card img {
+  transform: scale(1.1);
+  transition: all 0.3s ease-out;
+}
+
+.ui-card:hover img {
+  transform: scale(1.2);
+  opacity: 0.2;
+  filter: grayscale(0%);
+}
+
+.Description {
+  position: absolute;
+  left: 0;
+  bottom: 100px;
+  height: 100px;
+  padding: var(--padding);
+  color: var(--white);
+  display: none;
+}
+
+.Description h1 {
+  font-weight: 700;
+  font-size: 32px;
+  margin: 0 0 20xp;
+}
+
+.Description a {
+  color: var(--Link_color);
+  cursor: pointer;
+  transition: transform 0.5s ease-in-out;
+}
+.ui-card .Description .Content {
+  transition: transform 0.5s ease-in-out;
+}
+
+.ui-card:hover .Description .Content {
+  transform: translateY(-30px);
+}
+
+.ui-card:hover img {
+  filter: grayscale(100%) blur(2px);
+}
+.ui-card a {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+.ui-card:hover a {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.Content h1 {
+  font-family: "DIN Condensed";
+  font-weight: 700;
+  line-height: 38px;
+  font-size: 38px;
+  margin-bottom: 13px;
+}
+.Content p {
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  line-height: 16.02px;
+  font-weight: 400;
+}
+
+/* media query */
+@media (min-width: 768px) {
+  img {
+    left: 0;
+  }
+  .Description {
+    display: block;
+  }
+}
+
+.coco {
+  background: #579bc8;
+  font-size: xx-large;
+  margin-top: 40vh;
+  margin: 40vh;
+}
+
+.hidden {
+  opacity: 0;
+  transition: all 2s;
+}
+
+.show {
+  opacity: 1;
+}
